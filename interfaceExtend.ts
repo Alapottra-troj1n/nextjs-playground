@@ -3,6 +3,10 @@ interface Person {
   age: number;
 }
 
+type Car = {
+    name : string,
+}
+
 //how to extend
 
 interface Businessment extends Person {
@@ -12,6 +16,15 @@ interface Businessment extends Person {
 interface Student extends Person {
   courses: string[];
 }
+
+//extending with types
+
+type RaceCar = {
+    speed: number
+} & Car
+
+
+
 
 export function play() {
   const person: Person = {
@@ -25,6 +38,14 @@ export function play() {
     courses: ['english', 'graphics']
   };
 
+  const bmw: RaceCar = {
+    name : 'BMW 12M',
+    speed: 122
+  }
 
-  
+
+
 }
+
+
+
