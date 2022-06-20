@@ -7,7 +7,8 @@ interface Person {
 //     (name:string, age:number):number
 // }
 
-type LoginFn = (name:string,age:number) => number
+type LoginFn = (name:string,age?:number) => number;
+// ? here to declear that it is optional
 
 //functions are more preferrable for type 
 
@@ -24,11 +25,12 @@ export function play(){
 
 
     //calling the function with a specific interface
-    const login:LoginFn = (name:string,age:number) => {
+    const login:LoginFn = (name:string,age:number = 0) => {
         const info = `Name : ${name} , Age : ${age}`;
         console.log(info);
         return 0;
         //it must return a number
+        // = 0 specifiying that 0 is the default value
     }
 
 
