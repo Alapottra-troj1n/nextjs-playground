@@ -21,11 +21,15 @@ export async function getStaticProps() {
 
 export default function Home( {products} : InferGetStaticPropsType <typeof getStaticProps> ){
 
+  console.log(products);
+
 
   return (
     <div>
 
-        <h2>{products}</h2>
+        <h2>
+          {products.map(product => <p>{product.title}</p>)}
+        </h2>
           
 
     </div>

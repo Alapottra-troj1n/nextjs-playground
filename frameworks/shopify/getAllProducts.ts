@@ -1,10 +1,31 @@
 
+const fetchApi = async() => {
 
-const getAllProducts = async():Promise<number[]> => {
+    const url = 'https://jsonplaceholder.typicode.com/todos';
 
-    const products = [1,2,3]
+  const res = await fetch(url,{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
 
-    return products
+    const data = await res.json();
+
+    return {data}
+
+
+}
+
+
+
+
+
+const getAllProducts = async():Promise<any[]> => {
+
+    const products = await fetchApi();
+
+    return products.data
 
 };
  
