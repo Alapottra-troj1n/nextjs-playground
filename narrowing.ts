@@ -12,4 +12,20 @@ export function narrow() {
        
     }
 
+
+    // array generics 
+    function iterate (item : Array<string>) {
+
+        item.forEach(item => console.log(item));
+
+
+
+    }
+
+    iterate(['a', 'b', 'c'])
+
+
+
+
+
 }

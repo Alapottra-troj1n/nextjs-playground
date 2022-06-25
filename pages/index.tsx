@@ -1,23 +1,32 @@
-import type { NextPage } from 'next'
-import { useEffect } from 'react'
-import { play } from '../playground'
+import React from 'react';
+import type { InferGetStaticPropsType } from 'next';
+
+export async function getStaticProps() {
+  const products = [1,2,3]
+
+  return {
+    props: {
+
+        products
+
+    },
+    revalidate: 4* 60 * 60
 
 
-const Home: NextPage = () => {
-  const message:string = 'Hello World'
-
-  useEffect(() => {
-
-    play()
+  }
+}
 
 
-  },[])
+export default function Home( {products} :InferGetStaticPropsType<typeof getStaticProps> ){
+
+
 
   return (
     <div>
-      <h2>{message}</h2>
+
+          <h2>{products}</h2>
+          
+
     </div>
   )
 }
-
-export default Home
